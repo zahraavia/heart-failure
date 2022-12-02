@@ -2,11 +2,12 @@ import pandas as pd
 import numpy as np
 import streamlit as st
 import sklearn
-from sklearn.preprocessing import LabelEncoder
+
 
 #Load the Dataset
 hfailure = pd.read_csv ("heart.csv")
 
+from sklearn.preprocessing import LabelEncoder
 le = LabelEncoder()
 hfailure['Sex']=le.fit_transform(hfailure['Sex'])
 hfailure['ChestPainType']=le.fit_transform(hfailure['ChestPainType'])
@@ -20,7 +21,7 @@ hfailure['ST_Slope']=le.fit_transform(hfailure['ST_Slope'])
 X = hfailure.drop('HeartDisease',axis=1)
 Y = hfailure['HeartDisease']
 
-## Splitting X and y into training and testing data
+#Splitting X and y into training and testing data
 from sklearn.model_selection import train_test_split
 X_train, X_test, Y_train, Y_test = train_test_split(X,Y, test_size=0.4,
                                                     random_state=1)
@@ -118,16 +119,9 @@ lr = lr.fit(X_train, Y_train)
 #Output data
 
 if st.button("Heart Failure Diagnosis"):
-        result=lr.predict([[Age, Sex, ChestPainType, RestingBP,
-       Cholesterol, FastingBS, RestingECG, MaxHR, ExerciseAngina,
-       Oldpeak, ST_Slope]])
+  result=lr.predict([[Age, Sex, ChestPainType, RestingBP,Cholesterol, FastingBS, RestingECG, MaxHR, ExerciseAngina,Oldpeak, ST_Slope]])[0]
     
         if (result[0]==0):
             st.success("I dont have a heart failure.")
         else:
             st.warning("I have a heart failure.")
-    
-
-
-
-
