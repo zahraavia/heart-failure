@@ -117,10 +117,9 @@ lr = LogisticRegression(random_state=0)
 lr = lr.fit(X_train, Y_train)
 
 #Output data
-
 if st.button("Heart Failure Diagnosis"):
-  result=lr.predict([[Age, Sex, ChestPainType, RestingBP,Cholesterol, FastingBS, RestingECG, MaxHR, ExerciseAngina,Oldpeak, ST_Slope]])[0]
-        if (result[0]==0):
-            st.success("I dont have a heart failure.")
-        else:
-            st.warning("I have a heart failure.")
+    result=lr.predict([[Age, Sex, ChestPainType, RestingBP,Cholesterol, FastingBS, RestingECG, MaxHR, ExerciseAngina,Oldpeak, ST_Slope]])[0]
+    if (result[0]==0):
+        st.success("I dont have a heart failure.")
+    else:
+        st.warning("I have a heart failure.")
