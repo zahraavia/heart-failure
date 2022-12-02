@@ -120,7 +120,6 @@ lr = lr.fit(X_train, Y_train)
 
 if st.button("Heart Failure Diagnosis"):
   result=lr.predict([[Age, Sex, ChestPainType, RestingBP,Cholesterol, FastingBS, RestingECG, MaxHR, ExerciseAngina,Oldpeak, ST_Slope]])[0]
-    
         if (result[0]==0):
             st.success("I dont have a heart failure.")
         else:
