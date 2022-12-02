@@ -121,7 +121,7 @@ if st.button("Heart Failure Diagnosis"):
     result=lr.predict([[Age, Sex, ChestPainType, RestingBP,
                         Cholesterol, FastingBS, RestingECG, MaxHR, 
                         ExerciseAngina,Oldpeak, ST_Slope]]
-    if (result[0]==0):
+    if result==0:
         st.success("I dont have a heart failure.")
     else:
         st.warning("I have a heart failure.")
