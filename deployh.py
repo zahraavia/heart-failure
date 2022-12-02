@@ -54,7 +54,7 @@ if ChestPainType=="Asymptomatic":
 elif ChestPainType=='Non-Anginal Pain':
     ChestPainType=2
 elif ChestPainType=='Typical Angina':
-    ChestPainType==3
+    ChestPainType=3
 else:
     ChestPainType=1
 
@@ -102,7 +102,7 @@ ST_Slope =  st.selectbox("The slope of the peak exercise ST segment",
 ('Upsloping', 'Down', 'Flat'))
 
 if ST_Slope =='Upsloping':
-    ST_Slope =2
+    ST_Slope=2
 if ST_Slope=='Down':
     ST_Slope=0
 else:
