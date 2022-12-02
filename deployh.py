@@ -113,7 +113,7 @@ else:
 
 from sklearn.linear_model import LogisticRegression
 
-lr = LogisticRegression()
+lr = LogisticRegression(random_state=0)
 lr = lr.fit(X_train, Y_train)
 
 #Output data
